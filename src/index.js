@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// import './index.css';
+// import App from "./App";
 import * as serviceWorker from './serviceWorker';
+import Counter from './Counter';
+import App from './App';
+import ContextSample from './ContextSample';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rooteReducer from './PracticeIndex';
+
+const store = createStore(rooteReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
